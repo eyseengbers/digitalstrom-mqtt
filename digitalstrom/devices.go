@@ -103,7 +103,7 @@ func (dm *DevicesManager) reloadAllDevices() {
 					Properties: DeviceProperties{
 						// outputMode is set to 22 for GE devices where the
 						// output is configure to be "dimmed".
-						Dimmable: m["outputMode"].(float64) == 22,
+						Dimmable: m["outputMode"].(float64) == 22 || m["outputMode"].(float64) == 49 || m["outputMode"].(float64) == 51,
 					},
 				})
 			}

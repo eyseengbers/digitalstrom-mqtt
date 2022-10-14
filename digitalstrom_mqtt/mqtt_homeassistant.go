@@ -109,6 +109,7 @@ func (hass *HomeAssistantMqtt) deviceToHomeAssistantDiscoveryMessage(device digi
 				device.Name,
 				device.OutputChannels[0],
 				"command"),
+			"state_value_template": "{{ '0.00' if value == '0.00' else '100.00' }}",
 			"state_topic": hass.mqtt.getTopic(
 				"devices",
 				device.Dsid,
